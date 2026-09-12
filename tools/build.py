@@ -42,6 +42,67 @@ REPO_ADDON = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 </addon>
 """
 
+INDEX = """<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Immich for Kodi</title>
+<style>
+  :root {{ color-scheme: light dark; --fg: #16161a; --dim: #5b5b66; --bg: #fbfbfd;
+           --card: #fff; --line: #e4e4ec; --accent: #4f46e5; }}
+  @media (prefers-color-scheme: dark) {{
+    :root {{ --fg: #ececf1; --dim: #a0a0b0; --bg: #0f0f14; --card: #17171f;
+             --line: #2a2a36; --accent: #8b87f5; }}
+  }}
+  * {{ box-sizing: border-box; }}
+  body {{ margin: 0; padding: 48px 20px; background: var(--bg); color: var(--fg);
+         font: 16px/1.6 system-ui, -apple-system, Segoe UI, sans-serif; }}
+  main {{ max-width: 46rem; margin: 0 auto; }}
+  header {{ display: flex; gap: 18px; align-items: center; margin-bottom: 8px; }}
+  header img {{ width: 72px; height: 72px; border-radius: 16px; }}
+  h1 {{ font-size: 1.9rem; margin: 0; letter-spacing: -0.02em; }}
+  p.lead {{ color: var(--dim); margin: 4px 0 32px; }}
+  ol {{ padding-left: 1.2em; }}
+  li {{ margin: 10px 0; }}
+  code {{ background: var(--card); border: 1px solid var(--line); border-radius: 6px;
+         padding: 2px 6px; font-size: 0.9em; word-break: break-all; }}
+  a {{ color: var(--accent); }}
+  .card {{ background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+          padding: 20px 24px; margin: 24px 0; }}
+  footer {{ color: var(--dim); font-size: 0.9rem; border-top: 1px solid var(--line);
+           padding-top: 20px; margin-top: 40px; }}
+</style>
+<main>
+  <header>
+    <img src="{addon}/icon.png" alt="">
+    <div>
+      <h1>Immich for Kodi</h1>
+      <p class="lead">Browse and play your Immich photos and videos. Version {version}.</p>
+    </div>
+  </header>
+
+  <div class="card">
+    <strong>Install the repository</strong> to get updates automatically:
+    <ol>
+      <li>Download <a href="{repo}/{repo_zip}">{repo_zip}</a></li>
+      <li>Kodi &rarr; Add-ons &rarr; <em>Install from zip file</em> &rarr; pick that file</li>
+      <li>Add-ons &rarr; <em>Install from repository</em> &rarr; Immich Kodi &rarr; Immich</li>
+    </ol>
+    Or install <a href="{addon}/{addon_zip}">{addon_zip}</a> directly for a one-off install.
+  </div>
+
+  <p>Then open the addon settings and enter your server URL and either an API key
+  or your Immich email and password. Requires Kodi 21 (Omega) or newer.</p>
+
+  <footer>
+    <a href="{source}">Source code</a> &middot; GPL-3.0 &middot;
+    not affiliated with the Immich project.<br>
+    Repository URL for Kodi: <code>{base}</code>
+  </footer>
+</main>
+</html>
+"""
+
 
 def default_base_url():
     try:
@@ -110,6 +171,14 @@ def main():
         hashlib.md5(body.encode("utf-8")).hexdigest())
     shutil.rmtree(repo_dir)
     open(os.path.join(DOCS, ".nojekyll"), "w").close()
+    # Kodi only ever fetches addons.xml and the zips, but people open the bare URL.
+    root = ElementTree.parse(os.path.join(addon_dir, "addon.xml")).getroot()
+    source = root.find("./extension/source")
+    open(os.path.join(DOCS, "index.html"), "w").write(INDEX.format(
+        version=version, base=base, addon=ADDON, repo=REPO_ID,
+        addon_zip="%s-%s.zip" % (ADDON, version),
+        repo_zip="%s-%s.zip" % (REPO_ID, REPO_VERSION),
+        source=source.text if source is not None else base))
 
     print("%s %s -> docs/  (repo base: %s)" % (ADDON, version, base))
 
