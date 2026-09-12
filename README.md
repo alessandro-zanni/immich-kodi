@@ -64,7 +64,7 @@ Requires Kodi 21 (Omega) or newer.
 | Setting | Why |
 |---|---|
 | Photo quality | `Preview` by default — a 45 MP original takes seconds to decode on a TV box. Switch to `Original` on a strong device. |
-| Video source | `Original` by default: it keeps the camera's geometry. Immich's re-encode distorts rotated phone videos when the server transcodes on a GPU (it scales the unrotated frame, then leaves the rotation metadata on it). Switch to `Transcoded` if a device struggles with the original codec. |
+| Video source | `Original` by default: it is the camera's own stream. Immich re-encodes to **baseline-profile H.264**, and some TV hardware decoders (a Fire TV Stick, confirmed) render that with the wrong geometry when the video is portrait — a 720x1280 stream comes out stretched to fill the screen, and no Kodi view mode corrects it because the decoder, not the renderer, is wrong. Switch to `Transcoded` for smaller streams if your device handles them. |
 | Item label | Date taken, file name, or place. |
 | Include partner photos | Adds photos shared with you by partners to the timeline. |
 

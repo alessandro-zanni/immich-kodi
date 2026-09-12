@@ -223,5 +223,5 @@ msgid "Preview is much faster on TV boxes. Original sends the full-resolution fi
 msgstr ""
 
 msgctxt "#30083"
-msgid "The original keeps the camera's geometry. Immich's re-encode can distort rotated phone videos when the server transcodes on a GPU."
+msgid "The original keeps the camera's own stream. Immich re-encodes to baseline-profile H.264, which some TV hardware decoders render with the wrong geometry when the video is portrait."
 msgstr ""

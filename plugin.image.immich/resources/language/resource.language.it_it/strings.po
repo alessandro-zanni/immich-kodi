@@ -224,4 +224,4 @@ msgstr "L'anteprima è molto più veloce sui box TV. Originale scarica il file a
 
 msgctxt "#30083"
 msgid "Transcoded playback already has the correct rotation applied."
-msgstr "L'originale mantiene la geometria della fotocamera. La ricodifica di Immich può deformare i video verticali del telefono quando il server transcodifica su GPU."
+msgstr "L'originale mantiene il flusso della fotocamera. Immich ricodifica in H.264 profilo baseline, che alcuni decoder hardware dei box TV rendono con la geometria sbagliata quando il video è verticale."

@@ -107,8 +107,8 @@ class Immich:
             return self.media_url("/assets/%s/original" % asset_id)
         if source == "hls":
             return self.media_url("/assets/%s/video/stream/main.m3u8" % asset_id)
-        # Immich's re-encode: smaller, but it can carry the wrong geometry for
-        # rotated videos, so it is not the default.
+        # Immich's re-encode: smaller, but it is baseline-profile H.264 and some
+        # TV hardware decoders get portrait streams wrong, so it is not the default.
         return self.media_url("/assets/%s/video/playback" % asset_id)
 
     def person_thumb_url(self, person_id):
