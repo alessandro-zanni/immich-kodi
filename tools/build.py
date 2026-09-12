@@ -25,7 +25,7 @@ REPO_VERSION = "1.0.0"
 SKIP = re.compile(r"(^\.|__pycache__|\.pyc$|\.DS_Store)")
 
 REPO_ADDON = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="{id}" name="Immich Kodi repository" version="{version}" provider-name="alessandro">
+<addon id="{id}" name="Immich Kodi repository" version="{version}" provider-name="alessandro-zanni">
     <extension point="xbmc.addon.repository" name="Immich Kodi">
         <dir>
             <info compressed="false">{base}/addons.xml</info>

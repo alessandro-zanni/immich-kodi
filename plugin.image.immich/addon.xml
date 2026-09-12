@@ -2,7 +2,7 @@
 <addon id="plugin.image.immich"
        name="Immich"
        version="0.1.0"
-       provider-name="alessandro">
+       provider-name="alessandro-zanni">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
     </requires>
@@ -17,7 +17,7 @@
         <disclaimer lang="en_gb">Not affiliated with or supported by the Immich project.</disclaimer>
         <platform>all</platform>
         <license>GPL-3.0-only</license>
-        <source>https://github.com/alessandro/immich-kodi</source>
+        <source>https://github.com/alessandro-zanni/immich-kodi</source>
         <assets>
             <icon>resources/icon.png</icon>
             <fanart>resources/fanart.png</fanart>
