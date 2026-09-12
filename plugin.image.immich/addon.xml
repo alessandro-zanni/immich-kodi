@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.image.immich"
+       name="Immich"
+       version="0.1.0"
+       provider-name="alessandro">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides>image video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_gb">Browse your Immich photos and videos</summary>
+        <summary lang="it_it">Sfoglia le foto e i video del tuo Immich</summary>
+        <description lang="en_gb">Unofficial Immich client for Kodi. Browse the timeline, albums, favourites, people, places, tags, memories and folders, search your library, and play photos and videos straight from your Immich server.</description>
+        <description lang="it_it">Client Immich non ufficiale per Kodi. Sfoglia timeline, album, preferiti, persone, luoghi, tag, ricordi e cartelle, cerca nella libreria e riproduci foto e video direttamente dal tuo server Immich.</description>
+        <disclaimer lang="en_gb">Not affiliated with or supported by the Immich project.</disclaimer>
+        <platform>all</platform>
+        <license>GPL-3.0-only</license>
+        <source>https://github.com/alessandro/immich-kodi</source>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.png</fanart>
+        </assets>
+        <news>0.1.0 - First release.</news>
+    </extension>
+</addon>
