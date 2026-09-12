@@ -49,7 +49,8 @@ def default_base_url():
                                          cwd=ROOT, text=True, stderr=subprocess.DEVNULL).strip()
     except (subprocess.CalledProcessError, FileNotFoundError):
         return None
-    m = re.search(r"github\.com[:/]([^/]+)/([^/.]+)", remote)
+    # Host may be an SSH alias from ~/.ssh/config, e.g. github.com-personal:user/repo.
+    m = re.search(r"github\.com[^:/]*[:/]([^/]+)/([^/.]+)", remote)
     return "https://%s.github.io/%s" % (m.group(1), m.group(2)) if m else None
 
 
