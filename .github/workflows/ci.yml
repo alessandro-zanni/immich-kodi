@@ -1,0 +1,52 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'   # the Python Kodi 21 ships
+      - run: python3 tests/test_immich.py
+      - run: python3 tools/build.py --base-url "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kodi-repo
+          path: docs/
+
+  release:
+    needs: test
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: kodi-repo
+          path: docs
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            docs/plugin.image.immich/*.zip
+            docs/repository.immich/*.zip
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - id: pages
+        uses: actions/deploy-pages@v4
