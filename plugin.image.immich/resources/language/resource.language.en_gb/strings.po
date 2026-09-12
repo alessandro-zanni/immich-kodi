@@ -79,11 +79,11 @@ msgid "Original file"
 msgstr ""
 
 msgctxt "#30025"
-msgid "Transcoded (recommended)"
+msgid "Transcoded (Immich's re-encode)"
 msgstr ""
 
 msgctxt "#30026"
-msgid "Original file"
+msgid "Original file (recommended)"
 msgstr ""
 
 msgctxt "#30027"
@@ -223,5 +223,5 @@ msgid "Preview is much faster on TV boxes. Original sends the full-resolution fi
 msgstr ""
 
 msgctxt "#30083"
-msgid "Transcoded playback already has the correct rotation applied."
+msgid "The original keeps the camera's geometry. Immich's re-encode can distort rotated phone videos when the server transcodes on a GPU."
 msgstr ""

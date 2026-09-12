@@ -80,11 +80,11 @@ msgstr "File originale"
 
 msgctxt "#30025"
 msgid "Transcoded (recommended)"
-msgstr "Transcodificato (consigliato)"
+msgstr "Transcodificato (ricodifica di Immich)"
 
 msgctxt "#30026"
 msgid "Original file"
-msgstr "File originale"
+msgstr "File originale (consigliato)"
 
 msgctxt "#30027"
 msgid "HLS stream"
@@ -224,4 +224,4 @@ msgstr "L'anteprima è molto più veloce sui box TV. Originale scarica il file a
 
 msgctxt "#30083"
 msgid "Transcoded playback already has the correct rotation applied."
-msgstr "La riproduzione transcodificata ha già la rotazione corretta applicata."
+msgstr "L'originale mantiene la geometria della fotocamera. La ricodifica di Immich può deformare i video verticali del telefono quando il server transcodifica su GPU."

@@ -107,7 +107,8 @@ class Immich:
             return self.media_url("/assets/%s/original" % asset_id)
         if source == "hls":
             return self.media_url("/assets/%s/video/stream/main.m3u8" % asset_id)
-        # Default: Immich's transcode, which has the EXIF rotation baked in.
+        # Immich's re-encode: smaller, but it can carry the wrong geometry for
+        # rotated videos, so it is not the default.
         return self.media_url("/assets/%s/video/playback" % asset_id)
 
     def person_thumb_url(self, person_id):

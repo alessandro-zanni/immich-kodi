@@ -64,7 +64,7 @@ Requires Kodi 21 (Omega) or newer.
 | Setting | Why |
 |---|---|
 | Photo quality | `Preview` by default — a 45 MP original takes seconds to decode on a TV box. Switch to `Original` on a strong device. |
-| Video source | `Transcoded` applies Immich's autorotate. `Original` is untouched, `HLS` adaptive. |
+| Video source | `Original` by default: it keeps the camera's geometry. Immich's re-encode distorts rotated phone videos when the server transcodes on a GPU (it scales the unrotated frame, then leaves the rotation metadata on it). Switch to `Transcoded` if a device struggles with the original codec. |
 | Item label | Date taken, file name, or place. |
 | Include partner photos | Adds photos shared with you by partners to the timeline. |
 

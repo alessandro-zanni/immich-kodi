@@ -128,6 +128,19 @@ def test_timeline_views_end_to_end():
     assert photo[1].art["thumb"].endswith("size=thumbnail|x-api-key=SECRET")
 
 
+def test_setting_defaults_match_the_option_they_name():
+    """The settings store an index; a reordered option list would silently
+    change what the addon plays."""
+    from xml.etree import ElementTree
+    views, _ = setup()
+    xml = ElementTree.parse(os.path.join(kodistub.ADDON_DIR, "resources", "settings.xml"))
+    defaults = {s.get("id"): int(s.findtext("default"))
+                for s in xml.iter("setting") if s.get("type") == "integer"}
+    # Immich's re-encode distorts rotated phone videos, so the original wins.
+    assert views.VIDEO_SOURCES[defaults["video_source"]] == "original"
+    assert views.IMAGE_SIZES[defaults["image_size"]] == "preview"
+
+
 def test_every_action_is_routable():
     views, _ = setup()
     assert views.ACTIONS["root"] is views.root
