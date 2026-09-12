@@ -45,6 +45,9 @@ repository → Immich Kodi*.
 
 **One-off**: install `plugin.image.immich-x.y.z.zip` from the same release.
 
+The addon lives under **Pictures**, which is the only Kodi window that opens
+both photos and videos; Kodi's video window cannot display a photo.
+
 Then open the addon settings and fill in:
 
 - **Server URL** — e.g. `https://photos.example.com`
@@ -88,4 +91,5 @@ plugin.image.immich/
 
 ## Licence
 
-GPL-3.0-only. Not affiliated with the Immich project.
+GPL-3.0-only. Not affiliated with the Immich project; the icon is the official
+Immich logomark from [immich-app/immich](https://github.com/immich-app/immich).
