@@ -198,19 +198,23 @@ def asset_items(assets):
     for a in assets:
         li = xbmcgui.ListItem(label_for(a))
         li.setArt({"thumb": client.thumb_url(a["id"])})
-        if a["mime"]:
-            li.setProperty("MimeType", a["mime"])
         if a["dt"]:
             li.setDateTime(a["dt"].strftime("%Y-%m-%dT%H:%M:%S"))
         if a["image"]:
             target = client.image_url(a["id"], size)
+            # Immich renders previews as JPEG whatever the original was, and the
+            # URL carries no extension, so Kodi has nothing else to go on.
+            mime = a["mime"] if size == "original" else "image/jpeg"
         else:
             target = client.video_url(a["id"], source)
+            mime = {"original": a["mime"], "hls": None}.get(source, "video/mp4")
             li.setProperty("IsPlayable", "true")
             tag = li.getVideoInfoTag()
             tag.setTitle(li.getLabel())
             if a["duration"]:
                 tag.setDuration(a["duration"])
+        if mime:
+            li.setProperty("MimeType", mime)
         items.append((target, li, False))
     return items
 
