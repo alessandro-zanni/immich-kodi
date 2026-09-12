@@ -293,7 +293,13 @@ def albums(**_):
 
 
 def album(**params):
-    asset_listing(norm_assets(api().album(params["id"]).get("assets")))
+    # /api/albums/{id} returns metadata only - the assets come from the timeline.
+    filters = {"albumId": params["id"]}
+    months = api().buckets(order=order(), **filters)
+    if len(months) == 1:
+        # Most albums sit inside one month; skip the pointless extra level.
+        return bucket(timeBucket=months[0]["timeBucket"], **filters)
+    return buckets(**filters)
 
 
 def videos(**params):

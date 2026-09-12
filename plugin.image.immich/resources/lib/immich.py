@@ -121,9 +121,6 @@ class Immich:
     def albums(self):
         return self._req("GET", "/albums") or []
 
-    def album(self, album_id):
-        return self._req("GET", "/albums/%s" % album_id) or {}
-
     def buckets(self, **filters):
         return self._req("GET", "/timeline/buckets", params=filters) or []
 

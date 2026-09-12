@@ -89,10 +89,20 @@ def test_missing_and_unknown_fields_never_raise():
     assert views.norm_assets(None) == []
 
 
+def test_album_reads_its_assets_from_the_timeline():
+    # /api/albums/{id} carries metadata only, so the assets come from buckets.
+    routes = {("GET", "/timeline/buckets"): [{"timeBucket": "2026-09-01", "count": 2}],
+              ("GET", "/timeline/bucket"): BUCKET}
+    views, _ = setup(routes)
+    views.album(id="al1")
+    assert len(kodistub.CAPTURED) == 2, kodistub.CAPTURED   # flat, no month level
+    assert kodistub.CONTENT == ["images"]
+
+
 def test_empty_album_shows_a_placeholder():
-    views, _ = setup({("GET", "/albums/empty"): {"assets": []}})
+    views, _ = setup({("GET", "/timeline/buckets"): []})
     views.album(id="empty")
-    assert len(kodistub.CAPTURED) == 1 and kodistub.CONTENT == ["images"]
+    assert len(kodistub.CAPTURED) == 1 and kodistub.CAPTURED[0][1].getLabel() == "Nothing here"
 
 
 def test_timeline_views_end_to_end():
@@ -112,6 +122,9 @@ def test_timeline_views_end_to_end():
     photo, video = kodistub.CAPTURED
     assert "/thumbnail?size=preview" in photo[0]
     assert "/video/playback" in video[0] and video[1].props["IsPlayable"] == "true"
+    # Kodi gets no extension in these URLs, so the type has to be declared.
+    assert photo[1].props["MimeType"] == "image/jpeg"
+    assert video[1].props["MimeType"] == "video/mp4"
     assert photo[1].art["thumb"].endswith("size=thumbnail|x-api-key=SECRET")
 
 
