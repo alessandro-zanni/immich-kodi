@@ -1,0 +1,227 @@
+# Kodi Media Center language file
+# Addon Name: Immich
+# Addon id: plugin.image.immich
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: it_IT\n"
+
+msgctxt "#30000"
+msgid "Immich server URL"
+msgstr "URL del server Immich"
+
+msgctxt "#30001"
+msgid "Authentication"
+msgstr "Autenticazione"
+
+msgctxt "#30002"
+msgid "API key"
+msgstr "Chiave API"
+
+msgctxt "#30003"
+msgid "Email"
+msgstr "Email"
+
+msgctxt "#30004"
+msgid "Password"
+msgstr "Password"
+
+msgctxt "#30005"
+msgid "Session token"
+msgstr "Token di sessione"
+
+msgctxt "#30006"
+msgid "Verify TLS certificate"
+msgstr "Verifica certificato TLS"
+
+msgctxt "#30007"
+msgid "Photo quality"
+msgstr "Qualità foto"
+
+msgctxt "#30008"
+msgid "Video source"
+msgstr "Sorgente video"
+
+msgctxt "#30009"
+msgid "Item label"
+msgstr "Etichetta elementi"
+
+msgctxt "#30010"
+msgid "Newest first"
+msgstr "Prima i più recenti"
+
+msgctxt "#30011"
+msgid "Include partner photos"
+msgstr "Includi le foto dei partner"
+
+msgctxt "#30012"
+msgid "Items per page"
+msgstr "Elementi per pagina"
+
+msgctxt "#30020"
+msgid "API key"
+msgstr "Chiave API"
+
+msgctxt "#30021"
+msgid "Email and password"
+msgstr "Email e password"
+
+msgctxt "#30022"
+msgid "Preview (fast)"
+msgstr "Anteprima (veloce)"
+
+msgctxt "#30023"
+msgid "Full size"
+msgstr "Dimensione piena"
+
+msgctxt "#30024"
+msgid "Original file"
+msgstr "File originale"
+
+msgctxt "#30025"
+msgid "Transcoded (recommended)"
+msgstr "Transcodificato (consigliato)"
+
+msgctxt "#30026"
+msgid "Original file"
+msgstr "File originale"
+
+msgctxt "#30027"
+msgid "HLS stream"
+msgstr "Flusso HLS"
+
+msgctxt "#30028"
+msgid "Date taken"
+msgstr "Data dello scatto"
+
+msgctxt "#30029"
+msgid "File name"
+msgstr "Nome del file"
+
+msgctxt "#30030"
+msgid "Place"
+msgstr "Luogo"
+
+msgctxt "#30040"
+msgid "Timeline"
+msgstr "Timeline"
+
+msgctxt "#30041"
+msgid "Videos"
+msgstr "Video"
+
+msgctxt "#30042"
+msgid "Albums"
+msgstr "Album"
+
+msgctxt "#30043"
+msgid "Favourites"
+msgstr "Preferiti"
+
+msgctxt "#30044"
+msgid "People"
+msgstr "Persone"
+
+msgctxt "#30045"
+msgid "Places"
+msgstr "Luoghi"
+
+msgctxt "#30046"
+msgid "Tags"
+msgstr "Tag"
+
+msgctxt "#30047"
+msgid "Memories"
+msgstr "Ricordi"
+
+msgctxt "#30048"
+msgid "Folders"
+msgstr "Cartelle"
+
+msgctxt "#30049"
+msgid "Shared with me"
+msgstr "Condivisi con me"
+
+msgctxt "#30050"
+msgid "Search"
+msgstr "Cerca"
+
+msgctxt "#30051"
+msgid "Random"
+msgstr "Casuale"
+
+msgctxt "#30052"
+msgid "Explore"
+msgstr "Esplora"
+
+msgctxt "#30053"
+msgid "Settings"
+msgstr "Impostazioni"
+
+msgctxt "#30054"
+msgid "Next page"
+msgstr "Pagina successiva"
+
+msgctxt "#30055"
+msgid "Search Immich"
+msgstr "Cerca in Immich"
+
+msgctxt "#30056"
+msgid "Nothing here"
+msgstr "Nessun elemento"
+
+msgctxt "#30057"
+msgid "Archive"
+msgstr "Archivio"
+
+msgctxt "#30058"
+msgid "%s years ago"
+msgstr "%s anni fa"
+
+msgctxt "#30060"
+msgid "Cannot reach Immich"
+msgstr "Immich non raggiungibile"
+
+msgctxt "#30061"
+msgid "Check the server URL and that Kodi can reach it."
+msgstr "Controlla l'URL del server e che Kodi possa raggiungerlo."
+
+msgctxt "#30062"
+msgid "Authentication failed"
+msgstr "Autenticazione fallita"
+
+msgctxt "#30063"
+msgid "Check your API key or login details in the addon settings."
+msgstr "Controlla la chiave API o le credenziali nelle impostazioni."
+
+msgctxt "#30064"
+msgid "Immich error"
+msgstr "Errore di Immich"
+
+msgctxt "#30070"
+msgid "Connection"
+msgstr "Connessione"
+
+msgctxt "#30071"
+msgid "Playback"
+msgstr "Riproduzione"
+
+msgctxt "#30072"
+msgid "Content"
+msgstr "Contenuti"
+
+msgctxt "#30080"
+msgid "For example https://photos.example.com"
+msgstr "Per esempio https://foto.esempio.com"
+
+msgctxt "#30081"
+msgid "Turn off only for a server with a self-signed certificate."
+msgstr "Disattiva solo se il server usa un certificato autofirmato."
+
+msgctxt "#30082"
+msgid "Preview is much faster on TV boxes. Original sends the full-resolution file."
+msgstr "L'anteprima è molto più veloce sui box TV. Originale scarica il file a piena risoluzione."
+
+msgctxt "#30083"
+msgid "Transcoded playback already has the correct rotation applied."
+msgstr "La riproduzione transcodificata ha già la rotazione corretta applicata."

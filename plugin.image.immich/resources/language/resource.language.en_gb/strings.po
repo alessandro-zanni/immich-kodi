@@ -1,0 +1,227 @@
+# Kodi Media Center language file
+# Addon Name: Immich
+# Addon id: plugin.image.immich
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: en_GB\n"
+
+msgctxt "#30000"
+msgid "Immich server URL"
+msgstr ""
+
+msgctxt "#30001"
+msgid "Authentication"
+msgstr ""
+
+msgctxt "#30002"
+msgid "API key"
+msgstr ""
+
+msgctxt "#30003"
+msgid "Email"
+msgstr ""
+
+msgctxt "#30004"
+msgid "Password"
+msgstr ""
+
+msgctxt "#30005"
+msgid "Session token"
+msgstr ""
+
+msgctxt "#30006"
+msgid "Verify TLS certificate"
+msgstr ""
+
+msgctxt "#30007"
+msgid "Photo quality"
+msgstr ""
+
+msgctxt "#30008"
+msgid "Video source"
+msgstr ""
+
+msgctxt "#30009"
+msgid "Item label"
+msgstr ""
+
+msgctxt "#30010"
+msgid "Newest first"
+msgstr ""
+
+msgctxt "#30011"
+msgid "Include partner photos"
+msgstr ""
+
+msgctxt "#30012"
+msgid "Items per page"
+msgstr ""
+
+msgctxt "#30020"
+msgid "API key"
+msgstr ""
+
+msgctxt "#30021"
+msgid "Email and password"
+msgstr ""
+
+msgctxt "#30022"
+msgid "Preview (fast)"
+msgstr ""
+
+msgctxt "#30023"
+msgid "Full size"
+msgstr ""
+
+msgctxt "#30024"
+msgid "Original file"
+msgstr ""
+
+msgctxt "#30025"
+msgid "Transcoded (recommended)"
+msgstr ""
+
+msgctxt "#30026"
+msgid "Original file"
+msgstr ""
+
+msgctxt "#30027"
+msgid "HLS stream"
+msgstr ""
+
+msgctxt "#30028"
+msgid "Date taken"
+msgstr ""
+
+msgctxt "#30029"
+msgid "File name"
+msgstr ""
+
+msgctxt "#30030"
+msgid "Place"
+msgstr ""
+
+msgctxt "#30040"
+msgid "Timeline"
+msgstr ""
+
+msgctxt "#30041"
+msgid "Videos"
+msgstr ""
+
+msgctxt "#30042"
+msgid "Albums"
+msgstr ""
+
+msgctxt "#30043"
+msgid "Favourites"
+msgstr ""
+
+msgctxt "#30044"
+msgid "People"
+msgstr ""
+
+msgctxt "#30045"
+msgid "Places"
+msgstr ""
+
+msgctxt "#30046"
+msgid "Tags"
+msgstr ""
+
+msgctxt "#30047"
+msgid "Memories"
+msgstr ""
+
+msgctxt "#30048"
+msgid "Folders"
+msgstr ""
+
+msgctxt "#30049"
+msgid "Shared with me"
+msgstr ""
+
+msgctxt "#30050"
+msgid "Search"
+msgstr ""
+
+msgctxt "#30051"
+msgid "Random"
+msgstr ""
+
+msgctxt "#30052"
+msgid "Explore"
+msgstr ""
+
+msgctxt "#30053"
+msgid "Settings"
+msgstr ""
+
+msgctxt "#30054"
+msgid "Next page"
+msgstr ""
+
+msgctxt "#30055"
+msgid "Search Immich"
+msgstr ""
+
+msgctxt "#30056"
+msgid "Nothing here"
+msgstr ""
+
+msgctxt "#30057"
+msgid "Archive"
+msgstr ""
+
+msgctxt "#30058"
+msgid "%s years ago"
+msgstr ""
+
+msgctxt "#30060"
+msgid "Cannot reach Immich"
+msgstr ""
+
+msgctxt "#30061"
+msgid "Check the server URL and that Kodi can reach it."
+msgstr ""
+
+msgctxt "#30062"
+msgid "Authentication failed"
+msgstr ""
+
+msgctxt "#30063"
+msgid "Check your API key or login details in the addon settings."
+msgstr ""
+
+msgctxt "#30064"
+msgid "Immich error"
+msgstr ""
+
+msgctxt "#30070"
+msgid "Connection"
+msgstr ""
+
+msgctxt "#30071"
+msgid "Playback"
+msgstr ""
+
+msgctxt "#30072"
+msgid "Content"
+msgstr ""
+
+msgctxt "#30080"
+msgid "For example https://photos.example.com"
+msgstr ""
+
+msgctxt "#30081"
+msgid "Turn off only for a server with a self-signed certificate."
+msgstr ""
+
+msgctxt "#30082"
+msgid "Preview is much faster on TV boxes. Original sends the full-resolution file."
+msgstr ""
+
+msgctxt "#30083"
+msgid "Transcoded playback already has the correct rotation applied."
+msgstr ""
