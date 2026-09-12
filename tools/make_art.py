@@ -1,7 +1,10 @@
-"""Generate resources/icon.png and resources/fanart.png.
+"""Generate resources/fanart.png.
 
-The addon needs artwork and this machine has no image tooling, so the art is
-code: a tiny PNG writer plus a couple of shape functions. Re-run to tweak.
+No image tooling on this machine, so the fanart is code: a tiny PNG writer plus
+a shader. The icon is not generated - it is the official Immich logomark,
+resized from immich-app/immich design/ with:
+
+    sips -z 512 512 immich-logo-w-bg-android.png --out resources/icon.png
 """
 
 import math
@@ -53,33 +56,6 @@ def mix(a, b, t):
 NIGHT = (15, 15, 26)
 INDIGO = (49, 46, 129)
 VIOLET = (99, 102, 241)
-CYAN = (34, 211, 238)
-SUN = (251, 191, 36)
-
-
-def icon(u, v):
-    # Rounded-square card, so the icon keeps its shape on skins that don't crop.
-    pad, radius = 0.05, 0.16
-    dx = max(pad - u, u - (1 - pad), 0.0)
-    dy = max(pad - v, v - (1 - pad), 0.0)
-    inset = min(min(u, 1 - u), min(v, 1 - v)) - pad
-    if dx or dy or (inset < 0):
-        return NIGHT
-    corner = radius - min(min(u, 1 - u), min(v, 1 - v))
-    if corner > 0:
-        cx = radius if u < 0.5 else 1 - radius
-        cy = radius if v < 0.5 else 1 - radius
-        if math.hypot(u - cx, v - cy) > radius - pad and \
-           (abs(u - 0.5) > 0.5 - radius and abs(v - 0.5) > 0.5 - radius):
-            return NIGHT
-
-    if v > 0.58 + abs(u - 0.66) * 0.72:                 # near peak, in front
-        return mix(CYAN, (13, 90, 120), (v - 0.55) * 1.9)
-    if v > 0.42 + abs(u - 0.33) * 0.60:                 # far peak, behind
-        return mix(VIOLET, (55, 48, 163), (v - 0.40) * 1.5)
-    if math.hypot(u - 0.70, v - 0.28) < 0.105:          # sun
-        return SUN
-    return mix((38, 34, 96), (86, 78, 190), v * 1.1)    # sky
 
 
 def fanart(u, v):
@@ -89,5 +65,4 @@ def fanart(u, v):
 
 
 if __name__ == "__main__":
-    render(os.path.join(ART, "icon.png"), 512, 512, icon, samples=3)
     render(os.path.join(ART, "fanart.png"), 1280, 720, fanart, samples=1)
